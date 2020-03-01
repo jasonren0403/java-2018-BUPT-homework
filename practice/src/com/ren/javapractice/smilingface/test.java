@@ -12,7 +12,7 @@ import java.awt.*;
 
 
 public class test {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 JFrame f = new SmilingFaceFrame();

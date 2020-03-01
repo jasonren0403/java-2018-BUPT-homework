@@ -48,11 +48,11 @@ public class Vet implements Database {
     }
 
     /**
-     * Display the name of the com.ren.javapractice.PetVet.Vet and all the clients, one per line,
+     * Display the name of the Vet and all the clients, one per line,
      * on the screen. (See sample output for exact format.)
      */
     public void display() {
-        System.out.println("com.ren.javapractice.PetVet.Vet " + owner + " client list:");
+        System.out.println("Vet " + owner + " client list:");
         for (int a = 0; a < size(); a++) {
             System.out.println(clients[a].toString());
         }
@@ -63,7 +63,7 @@ public class Vet implements Database {
      * Add an item to the database, if there is room.
      * You are limited by the initial capacity.
      *
-     * @param o the object to add (must be a com.ren.javapractice.PetVet.Pet)
+     * @param o the object to add (must be a Pet)
      * @return true if added, false otherwise
      */
     public boolean add(Object o) {

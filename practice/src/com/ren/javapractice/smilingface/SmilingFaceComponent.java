@@ -60,7 +60,7 @@ class SmilingFaceComponent extends JComponent {
         Rectangle2D bounds = a.getStringBounds(message, context);
         double x = (getWidth() - bounds.getWidth()) / 2;
         double y = (getHeight() - bounds.getWidth()) / 2;
-        double baseY = y + getHeight() / 2;
+        double baseY = y + (getHeight() >> 1);
         g2.drawString(message, (int) x, (int) baseY);
     }
 }

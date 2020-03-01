@@ -76,7 +76,7 @@ public class Time {
 
     public String toString()  //h.print the time using toString()
     {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         hour += minute / 60;
         if (hour / 12 > 0) {
             if (type.equals("AM"))

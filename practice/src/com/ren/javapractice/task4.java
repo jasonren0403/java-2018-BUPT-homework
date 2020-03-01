@@ -16,7 +16,7 @@ package com.ren.javapractice;
  */
 
 public class task4 {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         for (int line = 1; line <= 9; line++) {
             System.out.print("|");
             for (int col = 1; col <= 9; col++) {

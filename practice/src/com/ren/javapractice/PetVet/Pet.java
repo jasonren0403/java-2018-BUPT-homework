@@ -41,9 +41,9 @@ public class Pet implements Comparable {
     protected static final double MONEY_PER_VISIT = 85;
 
     /**
-     * Create a com.ren.javapractice.PetVet.Pet object, initializing data members.
+     * Create a Pet object, initializing data members.
      *
-     * @param pname the com.ren.javapractice.PetVet.Pet's name
+     * @param pname the Pet's name
      * @param oname the owner's name
      * @param wt    the weight of the pet
      */
@@ -66,7 +66,7 @@ public class Pet implements Comparable {
     }
 
     /**
-     * The com.ren.javapractice.PetVet.Pet is visiting the vet, and will be charged accordingly.
+     * The Pet is visiting the vet, and will be charged accordingly.
      * The base cost for a visit is $85.00, and $30/shot is added.
      *
      * @param shots the number of shots the pet is getting
@@ -123,7 +123,7 @@ public class Pet implements Comparable {
  * 该类需要一个实例域来记录该宠物猫是一只仅在户内饲养的猫（inside）还是一只也会去户外活动的猫(outside)。
  * 该类需要一个实例域方法能在猫去户外后，改变其状态为一只(outside)的猫。
  * 所有的宠物猫默认情况下仅在户内饲养。但一旦去了一次户外，就是一只outside的猫了。
- * 该类需要重写visit（）方法，重写后功能为：宠物猫每次来宠物医院，会需要额外20$的洗牙费（每次来都会洗），同时每次相比（若是outside的猫）一般宠物(com.ren.javapractice.PetVet.Pet)还要多打一针（shot），该针的费用同一般宠物(com.ren.javapractice.PetVet.Pet)打针费用。重写该方法的时候需要注意，Pet类的相关数据也需要正确更新（提示，可先调用父类的visit()方法）。
+ * 该类需要重写visit（）方法，重写后功能为：宠物猫每次来宠物医院，会需要额外20$的洗牙费（每次来都会洗），同时每次相比（若是outside的猫）一般宠物(Pet)还要多打一针（shot），该针的费用同一般宠物(Pet)打针费用。重写该方法的时候需要注意，Pet类的相关数据也需要正确更新（提示，可先调用父类的visit()方法）。
  */
 class Cat extends Pet {
     private String type;
@@ -161,7 +161,7 @@ class Cat extends Pet {
 /**
  * Dog类：Pet的子类，记录宠物狗的相关信息。
  * 该类需要一个实例域来记录该宠物狗是一只小型(small)、中型(medium)还是大型(large)的狗。该实例域在构造方法中赋值，可参看P3main.java中的语句。
- * 该类需要重写visit（）方法，重写后功能为：宠物狗每次来宠物医院，需要收取的额外费用为：15$的修剪指甲，中型(Medium)狗的打针费用每针比一般宠物(com.ren.javapractice.PetVet.Pet)多收取2.5$，大型(Large)狗的打针费用每针比一般宠物(com.ren.javapractice.PetVet.Pet)多收取5$。重写该方法的时候需要注意，Pet类的相关数据也需要正确更新（提示，可先调用父类的visit()方法）。
+ * 该类需要重写visit（）方法，重写后功能为：宠物狗每次来宠物医院，需要收取的额外费用为：15$的修剪指甲，中型(Medium)狗的打针费用每针比一般宠物(Pet)多收取2.5$，大型(Large)狗的打针费用每针比一般宠物(Pet)多收取5$。重写该方法的时候需要注意，Pet类的相关数据也需要正确更新（提示，可先调用父类的visit()方法）。
  */
 class Dog extends Pet {
 

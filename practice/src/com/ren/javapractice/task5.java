@@ -21,6 +21,6 @@ public class task5 {
         System.out.print("Enter your name:");
         String third = in.next();
         double result = (double) first + second;
-        System.out.print("Hi! " + third + ", the sum of " + first + " and " + second + " is " + result + " .");
+        System.out.print("Hi! " + third + ", the sum of " + first + " and " + second + " is " + result);
     }
 }

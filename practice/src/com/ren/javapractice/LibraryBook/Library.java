@@ -88,11 +88,10 @@ public class Library {
                 if (!books[i].isBorrowed()) {
                     books[i].rented();
                     System.out.println("You successfully borrowed " + Bookname);
-                    break;
                 } else {
                     System.out.println("Sorry,this book is already borrowed.");
-                    break;
                 }
+                break;
             }
         }
         if (!found)

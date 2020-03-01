@@ -74,13 +74,11 @@ class ColorTestPanel extends JPanel {
     public void setColor(Color c) {
         if (c == Color.BLACK) {
             color = getBackground();
-            color2 = c;
-            repaint();
         } else {
             color = c;
-            color2 = c;
-            repaint();
         }
+        color2 = c;
+        repaint();
     }
 
     class ColorAction implements ActionListener {

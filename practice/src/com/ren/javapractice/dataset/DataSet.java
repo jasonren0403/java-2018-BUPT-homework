@@ -1,13 +1,13 @@
 package com.ren.javapractice.dataset;
 /*
  * 仔细阅读DataSet.java，该类实现了如下功能：
- * 1．	通过add(…)接收一组double类型数据；
- * 2．	通过getAverage()返回接收到的所有数据的平均值；
- * 3．	通过getMaximum()返回接收到的所有数据中最大的一个；
+ * 1．通过add(…)接收一组double类型数据；
+ * 2．通过getAverage()返回接收到的所有数据的平均值；
+ * 3．通过getMaximum()返回接收到的所有数据中最大的一个；
  * 利用接口技术改写此程序，扩展程序功能，要求改写后程序能够实现
- * 1．	通过add(…)接收一些自定义的类的对象；（提示：这些类实现了某个接口，而这个接口中的某个方法返回了类的测量值）；
- * 2．	通过getAverage()返回接收到的所有对象测量值的平均值；
- * 3．	通过getMaximum()返回接收到的所有对象测量值最大的一个对象；
+ * 1．通过add(…)接收一些自定义的类的对象；（提示：这些类实现了某个接口，而这个接口中的某个方法返回了类的测量值）；
+ * 2．通过getAverage()返回接收到的所有对象测量值的平均值；
+ * 3．通过getMaximum()返回接收到的所有对象测量值最大的一个对象；
  * 并用改写后的DataSet类，接收一组Human/Student对象，输出这一组对象的平均值，和其中测量值最大的一个对象。
  */
 
@@ -18,6 +18,8 @@ class DataSet {
     private double sum;
     private double maximum;
     private int count;
+    private Measurable[] measurables;
+    private final int CAPACITY = 30;
 
     /**
      * Constructs an empty data set.
@@ -26,6 +28,7 @@ class DataSet {
         sum = 0;
         count = 0;
         maximum = 0;
+        measurables = new Measurable[CAPACITY];
     }
 
     /**
@@ -34,11 +37,11 @@ class DataSet {
      * @param x a data value
      */
     public void add(Measurable... x) {
-        for (int i = 0; i < x.length; i++) {
-            double a = x[i].getMeasure();
+        for (Measurable measurable : x) {
+            double a = measurable.getMeasure();
             sum = sum + a;
-            if (count == 0 || maximum < x[i].getMeasure()) maximum = x[i].getMeasure();
-            count++;
+            if (count == 0 || maximum < measurable.getMeasure()) maximum = measurable.getMeasure();
+            measurables[count++] = measurable;
         }
     }
 
@@ -57,8 +60,13 @@ class DataSet {
      *
      * @return the maximum or 0 if no data has been added
      */
-    public double getMaximum() {
-        return maximum;
+    public Measurable getMaximum() {
+        for (Measurable m : measurables) {
+            if (m.getMeasure() == maximum) {
+                return m;
+            }
+        }
+        return null;
     }
 
 }

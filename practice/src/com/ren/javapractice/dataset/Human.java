@@ -2,19 +2,17 @@ package com.ren.javapractice.dataset;
 
 public class Human implements Measurable {
     private double measure;
-    private String type;
 
-    public Human(String atype, double ameasure) {
-        type = atype;
+    public Human(double ameasure) {
         measure = ameasure;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public double getMeasure() {
         return this.measure;
+    }
+
+    public String toString() {
+        return "[" + getClass().getName() + "]" + "measure:" + getMeasure();
     }
 }
 
